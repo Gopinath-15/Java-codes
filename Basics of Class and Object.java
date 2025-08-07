@@ -1,37 +1,35 @@
 import java.util.Scanner;
 
-class Agent {
-    String name;
-    int age;
-    String codename;
-    boolean isUndercover;
 
-    void introduce() {
-        System.out.println("Hello, I am Agent " + codename + ".");
-        System.out.println("My real name is " + name + ".");
-        System.out.println("I am " + age + " years old.");
+class Vehicle {
+    String brand;
+    int speed;
+
+   
+    void show() {
+        System.out.println("Car brand: " + brand);
+        System.out.println("Top speed: " + speed + " km/h");
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Agent topAgent = new Agent();
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Name: ");
-        topAgent.name = scanner.nextLine();
+        Vehicle v1 = new Vehicle();
 
-        System.out.print("Age: ");
-        topAgent.age = scanner.nextInt();
-        scanner.nextLine();
+        System.out.print("Enter a car brand name: ");
+        v1.brand = sc.nextLine();
 
-        System.out.print("Codename: ");
-        topAgent.codename = scanner.nextLine();
+        System.out.print("Enter the top speed (km/h): ");
+        v1.speed = sc.nextInt();
 
-        System.out.print("Undercover? (true/false): ");
-        topAgent.isUndercover = scanner.nextBoolean();
+        sc.nextLine(); 
 
-        topAgent.introduce();
-        scanner.close();
+        System.out.println("\nVehicle Information:");
+        v1.show();
+
+       
+        sc.close();
     }
 }
